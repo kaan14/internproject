@@ -1,7 +1,7 @@
 var firebase = require('./index');
 
 var CRUD = {
-    create: function(companyName, companyPhone, emailAddress, businessType, companyDescription, companyWebsite, contactPersonFirstName, contactPersonEmail, contactPersonLastname) {
+    create: function(companyName, companyPhone, emailAddress, businessType, companyDescription, usedTech,companyWebsite, contactPersonFirstName, contactPersonEmail, contactPersonLastname) {
         firebase.ref(`companies/${companyName}`).set({
             companyContact: {
                 companyName: companyName,
@@ -12,7 +12,8 @@ var CRUD = {
             aboutCompany: {
                 companyName: companyName,
                 businessType: businessType,
-                companyDescription: companyDescription
+                companyDescription: companyDescription, 
+                usedTech: usedTech
             },
             representative: {
                 firstName: contactPersonFirstName,
