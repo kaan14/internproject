@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    
 </head>
 
 <body>
@@ -61,27 +61,27 @@
         </div>
         <div class="form-row" id="textAreas">
             <div class="col">
-                <textarea type="text" class="form-control textarea" id="userDescription textarea" placeholder="Describe Yourself (etc, Who you are? How long have you been coding ?)"></textarea>
-                <textarea type="text" class="form-control textarea" id="techologiesUsed textarea" placeholder="List Your Skills in Coding (etc, Javascript, Node.js, MySql, HTML, CSS)"></textarea>
+                <textarea type="text" class="form-control textarea" id="userDescription" placeholder="Describe Yourself (etc, Who you are? How long have you been coding ?)"></textarea>
+                <textarea type="text" class="form-control textarea" id="userTechologiesUsed" placeholder="List Your Skills in Coding (etc, Javascript, Node.js, MySql, HTML, CSS)"></textarea>
             </div>
         </div>
         <div class="form-row">
             <div class="col">
-                <input type="text" class="form-control password" id="password1" placeholder="Password">
+                <input type="text" class="form-control password" id="userPassword1" placeholder="Password">
             </div>
             <div class="col">
-                <input type="text" class="form-control" id="password2" placeholder="Re-Type Password">
+                <input type="text" class="form-control" id="userPassword2" placeholder="Re-Type Password">
             </div>
         </div>
         <div class="form-row">
             <div class="col">
-                <button type="submit" id="companySubmit">Submit</button>
+                <button type="submit" id="userSubmit">Submit</button>
             </div>
         </div>
     </div>
     </div>
 
-
+    <script src="js/userSignup.js"></script>
 </body>
 
 </html>
