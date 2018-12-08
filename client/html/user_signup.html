@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Thanks for Signing Up</h1>
+            <p class="lead">Intern Me is a best way to proof your-self to employers</p>
+        </div>
+    </div>
+
+    <div class="form-row">
+
+        <style>
+            .form-control{
+                margin: 0px 50px 2px 2px;
+                width: 500px;         
+            }
+            #companySubmit{
+                margin-top: 15px; 
+                color: blanchedalmond; 
+                background-color: darkgoldenrod
+            }
+            #links{
+                margin: 20px 350px ; 
+
+            }
+            #textAreas{
+                margin: 20px 350px ; 
+            }
+            </style>
+        <div class="col">
+            <input type="text" class="form-control" id="userRName" placeholder="Name">
+            <input type="text" class="form-control" id="userlastname" placeholder="Lastname">
+            <input type="text" class="form-control" id="username" placeholder="Username">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" id="userEmailAddress" placeholder="Email Address">
+            <input type="text" class="form-control" id="portfolio" placeholder="Portfolio">
+            <input type="text" class="form-control" id="userPhone" placeholder="Phone # (You Phone # will not be displayed) ">
+        </div>
+
+        <div class="form-row" id="links">
+            <div class="col">
+                <input type="text" class="form-control" id="linkedin" placeholder="LinkedIn">
+                <input type="text" class="form-control" id="github" placeholder="GitHub">
+            </div>
+        </div>
+        <div class="form-row" id="textAreas">
+            <div class="col">
+                <textarea type="text" class="form-control textarea" id="userDescription textarea" placeholder="Describe Yourself (etc, Who you are? How long have you been coding ?)"></textarea>
+                <textarea type="text" class="form-control textarea" id="techologiesUsed textarea" placeholder="List Your Skills in Coding (etc, Javascript, Node.js, MySql, HTML, CSS)"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control password" id="password1" placeholder="Password">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" id="password2" placeholder="Re-Type Password">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <button type="submit" id="companySubmit">Submit</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+
+</html>
