@@ -4,7 +4,6 @@ var nodemailer = require("nodemailer");
 
 
 function emailSend(data) {
-
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -12,14 +11,12 @@ function emailSend(data) {
             pass: 'Internme1403!',
         }
     });
-
     var mailOption = {
         from: 'internme.4@gmail.com',
         to: data.body.emailAddress,
         subject: 'Thanks for submitting application',
         text: 'something very important'
     };
-
     transporter.sendMail(mailOption, function (err, info) {
         if (err) {
             console.log(err);
@@ -27,7 +24,6 @@ function emailSend(data) {
         else {
             console.log("Email sent : " + info.response);
         }
-
     })
 }
 
@@ -37,7 +33,7 @@ function emailSend(data) {
 router.post("/api/companyInfo", function (req, res) {
     console.log(req.body);
     res.send("thanks for signup");
-    emailSend(req); 
+    emailSend(req);
 
 
 
