@@ -11,9 +11,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
-    
 </head>
-
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -21,9 +19,7 @@
             <p class="lead">Intern Me is a best way to proof your-self to employerss</p>
         </div>
     </div>
-
     <div class="form-row">
-
         <style>
             .form-control{
                 margin: 0px 50px 2px 2px;
@@ -65,6 +61,13 @@
                 <textarea type="text" class="form-control textarea" id="userTechologiesUsed" placeholder="List Your Skills in Coding (etc, Javascript, Node.js, MySql, HTML, CSS)"></textarea>
             </div>
         </div>
+        <div class = "skillsComboBox">
+
+
+        </div>
+
+
+
         <div class="form-row">
             <div class="col">
                 <input type="text" class="form-control password" id="userPassword1" placeholder="Password">
@@ -81,7 +84,75 @@
     </div>
     </div>
 
-    <script src="js/userSignup.js"></script>
+    <!-- <script src="js/userSignup.js" type="text/javascript"> -->
+    <script>
+        console.log("connected userSignup page");
+
+        //get company information on submit 
+        $("#userSubmit").on("click", function (event) {
+            event.preventDefault();
+            var userRName = $("#userRName").val().trim();
+            var userlastname = $("#userlastname").val().trim();
+            var username = $("#username").val().trim();
+            var userEmailAddress = $("#userEmailAddress").val().trim();
+            var portfolio = $("#portfolio").val().trim();
+            var userPhone = $("#userPhone").val().trim();
+            var linkedin = $("#linkedin").val().trim();
+            var github = $("#github").val().trim();
+            var userDescription = $("#userDescription").val();
+            var userTechologiesUsed = $("#userTechologiesUsed").val();
+            var userPassword1 = $("#userPassword1").val().trim();
+            var userPassword2 = $("#userPassword2").val().trim();
+
+            var userInfo = {
+                userRName: userRName,
+                userlastname: userlastname,
+                username: username,
+                userEmailAddress: userEmailAddress,
+                portfolio: portfolio,
+                userPhone: userPhone,
+                linkedin: linkedin,
+                github: github,
+                userDescription: userDescription,
+                userTechologiesUsed: userTechologiesUsed,
+                userPassword1: userPassword1,
+                userPassword2: userPassword2,
+            };
+
+            clearInputBoxes();
+            console.log(userInfo);
+            $.ajax("/api/userInfo", {
+                type: "POST",
+                data: userInfo
+            }).then(
+                function () {
+                    console.log("created new user");
+                    // Reload the page to get the updated list
+                    location.reload();
+                }
+            );
+        });
+
+        var skillList = ["HTML", "CSS", "JavaScript", "Node.js", "Express", "mySql", "MongoDB", "React", "JSX"];
+        var  input = $("<input type = 'checkbox'/>" ); 
+        
+
+        //clear inputboxes
+        function clearInputBoxes() {
+            $("#userRName").val("");
+            $("#userlastname").val("");
+            $("#username").val("");
+            $("#userEmailAddress").val("");
+            $("#portfolio").val("");
+            $("#userPhone").val("");
+            $("#linkedin").val("");
+            $("#github").val("");
+            $("#userDescription").val("");
+            $("#userTechologiesUsed").val("");
+            $("#userPassword1").val("");
+            $("#userPassword2").val("");
+        }
+    </script>
 </body>
 
 </html>

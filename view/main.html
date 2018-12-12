@@ -11,10 +11,15 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+
 </head>
 
 <body>
+    <style>
+    a {
+        color: aliceblue; 
+    }
+    </style>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Defeat others with your skills</h1>
@@ -26,15 +31,31 @@
         <div class="row">
             <div class="col-sm">
                 <h1>Intern me provides free-coding service to companies</h1>
-                    <button type="button" class="btn btn-primary btn-lg">sign up</button>
-                    <button type="button" class="btn btn-primary btn-lg">login</button>
+                <button type="button" class="btn btn-primary btn-lg" id="companySignUp" ><a href = "/companySignUp">sign up</a></button>
+                <button type="button" class="btn btn-primary btn-lg">login</button>
             </div>
             <div class="col-sm">
-                    <h1>Intern me is where your career starts, prove your skills and get companies recommandations</h1>
-                    <button type="button" class="btn btn-primary btn-lg">sign up</button>
-                    <button type="button" class="btn btn-primary btn-lg">login</button>
+                <h1>Intern me is where your career starts, prove your skills and get companies recommandations</h1>
+                <button type="button" class="btn btn-primary btn-lg"><a href = "/userSignUp">sign up</a></button>
+                <button type="button" class="btn btn-primary btn-lg">login</button>
             </div>
         </div>
     </div>
+
+    <script>
+        console.log("page connected");
+
+        $("#companySignUp").on("click", function () {
+            console.log("button clicked");
+            $.ajax("/companySignUp", {
+                type: "GET"
+            }).then(function () {
+                console.log("page loaded");
+            })
+        })
+
+
+    </script>
 </body>
+
 </html>

@@ -69,8 +69,8 @@ function clearInputBoxes() {
     $("#techologiesUsed").val("");
     $("#password1").val("");
     $("#password2").val("");
-
 }
+
 
 
 
