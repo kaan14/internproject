@@ -8,6 +8,18 @@
     <div class="modal-body">
         <p>{{companyName}}</p>
         <p>{{businessType}}</p>
+        <p><a href = {{companyWebsite}}>{{companyWebsite}}</a></p>
         <p>{{position}}</p>
     </div>
 </div>
+<div class="description">
+        <p>{{companyDescription}}</p>
+    </div>
+    
+    <div class="techList">
+    {{#each list}}
+    <ul>{{this}}</ul>
+    {{/each}}
+
+
+    </div>

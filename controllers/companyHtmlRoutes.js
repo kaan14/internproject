@@ -14,12 +14,15 @@ router.get("/companySignUp", function(req, res){
 })
 
 var link = "https://images.unsplash.com/photo-1543145223-1f9043516739?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80";
-
-router.get("/:companyName", function(req, res){
+var list = ["node.js", "sql", "react.js", "MongoDB", "HTML", "CSS", "Javascript"]; 
+router.get("/company/:companyName", function(req, res){
     res.render("companyProfile", {companyLogo: link,
                                 companyName: "intern",
                                 businessType: "software",
-                                position : "something"
+                                companyWebsite: "www.google.com",
+                                position : "something", 
+                                companyDescription: "We provide software service to companies, while helping our new generation software developers grow and and gain experience.",
+                                list: list
     }); 
 })
 

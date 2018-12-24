@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require("nodemailer");
+var fs = require ('fs');
+
 
 
 function emailSend(data) {
@@ -27,15 +29,27 @@ function emailSend(data) {
     })
 }
 
-//var dbase = require('.......'); 
+//database import 
+var dbCompany = require('../models/crudCompany.js'); 
+
+
 
 //company info to database and send an e-mail to user
 router.post("/api/companyInfo", function (req, res) {
+    
+    
+
+    fs.appendFile("./files/company.txt", "{" + req.body.companyName + "}, " + "\n", function(err){
+        console.log("read err")
+        if (err) throw err;
+    }); 
+
+    // dbCompany.create(req.body).then(function(dbCompany){
+    //     res.json(dbCompany)
+    // })
     console.log(req.body);
     res.send("thanks for signup");
     emailSend(req);
-
-
 
 
 
