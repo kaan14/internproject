@@ -1,0 +1,29 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Heyyy Here are Some New Projects For you</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+
+
+<div class="position-static">
+    {{#each jobPost}}
+     <hr>
+     <hr>
+    <div class="cartFeed">
+        <div id="companyLogo"><img style="width: 300px" height="300px" src={{this.logo}} />
+            <h3>{{this.companyName}}</h3>
+        </div>
+        <div class="cartDescription">
+            <p id="jobDetails">{{this.jobDescription}}</p>
+            <ul id="techList">
+                {{#each this.techList}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <p>Add this job to your list</p>
+            <button id="btnAddJob" class="btn-primary" type="submit">Add</button>
+        </div>
+    </div>
+    {{/each}}
+</div>
