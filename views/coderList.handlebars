@@ -1,0 +1,25 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Heyyy Here are Some Genius</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+
+
+{{#each coderList}}
+<div class="position-static">
+    <div class="coderListCard">
+        <img style="width: 300px" height="300px" src={{this.coderPic}}/>
+        <p class="coderListName">{{this.name}}{{this.lastname}}</p>
+        <p class="coderLevel">{{this.level}}</p>
+        <p class="coderContr">{{this.numberContr}}</p>
+    </div> 
+    {{#each skills}}
+        <div>
+            <p class="coderSkills">{{this.skills}}</p>
+        </div>
+    {{/each}}
+
+
+</div>
+{{/each}}
