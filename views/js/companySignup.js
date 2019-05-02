@@ -34,9 +34,8 @@ $("#companySubmit").on("click", function (event) {
         password1: password1,
         password2: password2,
     };
-
-
     clearInputBoxes();
+
     console.log(companyInfo);
 
     $.ajax("/api/companyInfo",{

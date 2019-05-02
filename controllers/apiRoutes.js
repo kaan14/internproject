@@ -1,16 +1,17 @@
 var express = require('express');
+
 var router = express.Router();
 var nodemailer = require("nodemailer");
 var fs = require ('fs');
 
 
-
+//Email function here
 function emailSend(data) {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: 'internme.4@gmail.com',
-            pass: 'Internme1403!',
+            pass: 'internme1403!!',
         }
     });
     var mailOption = {
@@ -30,29 +31,16 @@ function emailSend(data) {
 }
 
 //database import 
-var dbCompany = require('../models/crudCompany.js'); 
-
-
+var db = require('../models/crudCompany'); 
 
 //company info to database and send an e-mail to user
 router.post("/api/companyInfo", function (req, res) {
-    
-    
-
+    db.create(req.body.companyName, req.body.companyPhone, req.body.emailAddress);
+    //emailSend(req);
     fs.appendFile("./files/company.txt", "{" + req.body.companyName + "}, " + "\n", function(err){
-        console.log("read err")
+        
         if (err) throw err;
     }); 
-
-    // dbCompany.create(req.body).then(function(dbCompany){
-    //     res.json(dbCompany)
-    // })
-    console.log(req.body);
-    res.send("thanks for signup");
-    emailSend(req);
-
-
-
 });
 
 

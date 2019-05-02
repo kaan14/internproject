@@ -1,12 +1,19 @@
 var express = require('express'); 
+var db = require('../models/crudCompany')
 var router = express.Router(); 
-
 var path = require('path'); 
+
+
+
+
 router.get("/", function(req, res){
     console.log("file is sending")
     res.sendFile(path.join(__dirname,("../views/main.html"))); 
 }); 
 
+router.get("/companyLogin", function(req, res){
+    res.sendFile(path.join(__dirname, ("../views/companyLogin.html"))); 
+})
 
 router.get("/companySignUp", function(req, res){
     res.sendFile(path.join(__dirname,("../views/companySignUp.html"))); 

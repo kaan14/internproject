@@ -1,5 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/coderList">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/coderList">Developers<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <div class="media">
-    <img class="mr-3" src = {{companyLogo}} alt="Generic placeholder image" height="420px" width="420px">
+    <img class="mr-3" src={{companyLogo}} alt="Generic placeholder image" height="420px" width="420px">
     <div class="media-body">
         <h5 class="mt-0">Media heading</h5>
         Cras sit amet nibh libero, in gravida nulla.
@@ -8,18 +22,18 @@
     <div class="modal-body">
         <p>{{companyName}}</p>
         <p>{{businessType}}</p>
-        <p><a href = {{companyWebsite}}>{{companyWebsite}}</a></p>
+        <p><a href={{companyWebsite}}>{{companyWebsite}}</a></p>
         <p>{{position}}</p>
     </div>
 </div>
 <div class="description">
-        <p>{{companyDescription}}</p>
-    </div>
-    
-    <div class="techList">
+    <p>{{companyDescription}}</p>
+</div>
+
+<div class="techList">
     {{#each list}}
     <ul>{{this}}</ul>
     {{/each}}
 
 
-    </div>
+</div>
