@@ -17,26 +17,34 @@ $("#userSubmit").on("click", function (event) {
     var userPassword1 = $("#userPassword1").val().trim();
     var userPassword2 = $("#userPassword2").val().trim();
 
-    var userInfo = {
-        userRName: userRName,
-        userlastname: userlastname,
-        username: username,
-        userEmailAddress: userEmailAddress,
-        portfolio: portfolio,
-        userPhone: userPhone,
-        linkedin: linkedin,
-        github: github,
-        userDescription: userDescription,
-        userTechologiesUsed: userTechologiesUsed,
-        userPassword1: userPassword1,
-        userPassword2: userPassword2,
-    };
+    function passwordConfirmation(userPassword1, userPassword2) {
+        if (userPassword1 !== userPassword2) {
+            alert("Please check your password and enter matching password combination")
+            return False
+        }
+    }
 
+    passwordConfirmation(userPassword1, userPassword2);
+
+
+        var userInfo = {
+            userName: userName,
+            userlastname: userlastname,
+            username: username,
+            userEmailAddress: userEmailAddress,
+            portfolio: portfolio,
+            userPhone: userPhone,
+            linkedin: linkedin,
+            github: github,
+            userDescription: userDescription,
+            userTechologiesUsed: userTechologiesUsed,
+            userPassword: userPassword,
+        };
 
     clearInputBoxes();
     console.log(userInfo);
-
-    $.ajax("/api/userInfo",{
+    
+    $.ajax("/api/userInfo", {
         type: "POST",
         data: userInfo
     }).then(
@@ -47,7 +55,7 @@ $("#userSubmit").on("click", function (event) {
         }
     );
 
-    });
+});
 
 
 

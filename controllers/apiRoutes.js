@@ -31,17 +31,30 @@ function emailSend(data) {
 }
 
 //database import 
-var db = require('../models/crudCompany'); 
+var db_company = require('../models/crudCompany'); 
+var db_user = require("../models/crudUsers"); 
+
 
 //company info to database and send an e-mail to user
 router.post("/api/companyInfo", function (req, res) {
-    db.create(req.body.companyName, req.body.companyPhone, req.body.emailAddress);
+    db_company.create(req.body.companyName, req.body.companyPhone, req.body.emailAddress);
     //emailSend(req);
     fs.appendFile("./files/company.txt", "{" + req.body.companyName + "}, " + "\n", function(err){
         
         if (err) throw err;
     }); 
 });
+
+router.post("/api/userInfo", function(req, res){
+    db_user.create(req.body.firstname, req.body.lastname, req.body.email, req.body.age, req.body.gender, req.body.phone, req.body.city, req.body.degree, req.body.skills, req.body.fieldOfInterest, req.body.workinExperience, req.body.portfolio, req.body.description, req.body.linkedin, req.body.github, req.body.userTechUsed, req.body.password)
+    
+    console.log("users info is succesfully created")
+})
+
+router.post("/api/userInfo", function(req, res){
+    console.log(req.body)
+    db.read(req.body); 
+})
 
 
 module.exports = router; 

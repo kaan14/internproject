@@ -34,6 +34,8 @@ router.get("/company/:companyName", function(req, res){
 })
 
 
-
+router.get("/coderList", function(req, res){
+    
+})
 
 module.exports = router; 
