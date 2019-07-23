@@ -1,5 +1,4 @@
 var express = require('express');
-
 var router = express.Router();
 var nodemailer = require("nodemailer");
 var fs = require ('fs');
@@ -32,7 +31,7 @@ function emailSend(data) {
 
 //database import 
 var db_company = require('../models/crudCompany'); 
-var db_user = require("../models/crudUsers"); 
+var db_user = require("../models/crudCoder"); 
 
 
 //company info to database and send an e-mail to user
@@ -45,16 +44,18 @@ router.post("/api/companyInfo", function (req, res) {
     }); 
 });
 
+
+
 router.post("/api/userInfo", function(req, res){
-    db_user.create(req.body.firstname, req.body.lastname, req.body.email, req.body.age, req.body.gender, req.body.phone, req.body.city, req.body.degree, req.body.skills, req.body.fieldOfInterest, req.body.workinExperience, req.body.portfolio, req.body.description, req.body.linkedin, req.body.github, req.body.userTechUsed, req.body.password)
-    
+       db_user.create(req.body.userRName, req.body.userlastname, req.body.userEmailAddress,req.body.portfolio, req.body.userPhone, req.body.github, req.body.linkedin, req.body.github, req.body.userDescription, req.body.userTechologiesUsed, req.body.userPassword1); 
+       console.log(req.body.userRName, req.body.userlastname, req.body.userEmailAddress,req.body.portfolio, req.body.userPhone, req.body.github, req.body.linkedin, req.body.github, req.body.userDescription, req.body.userTechologiesUsed, req.body.userPassword1); 
+
     console.log("users info is succesfully created")
 })
 
-router.post("/api/userInfo", function(req, res){
-    console.log(req.body)
-    db.read(req.body); 
-})
+
+
+
 
 
 module.exports = router; 

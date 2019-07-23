@@ -1,6 +1,12 @@
 console.log("connected userSignup page");
 
 
+
+$("#userlastname").change(function(){
+    console.log("lastname changed")
+})
+
+
 //get company information on submit 
 $("#userSubmit").on("click", function (event) {
     event.preventDefault();
@@ -17,6 +23,9 @@ $("#userSubmit").on("click", function (event) {
     var userPassword1 = $("#userPassword1").val().trim();
     var userPassword2 = $("#userPassword2").val().trim();
 
+
+   
+
     function passwordConfirmation(userPassword1, userPassword2) {
         if (userPassword1 !== userPassword2) {
             alert("Please check your password and enter matching password combination")
@@ -25,7 +34,6 @@ $("#userSubmit").on("click", function (event) {
     }
 
     passwordConfirmation(userPassword1, userPassword2);
-
 
         var userInfo = {
             userName: userName,
@@ -41,9 +49,11 @@ $("#userSubmit").on("click", function (event) {
             userPassword: userPassword,
         };
 
+        
+
     clearInputBoxes();
     console.log(userInfo);
-    
+
     $.ajax("/api/userInfo", {
         type: "POST",
         data: userInfo
@@ -54,10 +64,11 @@ $("#userSubmit").on("click", function (event) {
             location.reload();
         }
     );
+    
+   
 
+    
 });
-
-
 
 //clear inputboxes
 function clearInputBoxes() {

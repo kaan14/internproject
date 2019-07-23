@@ -113,6 +113,22 @@
         console.log("connected companysignup page");
 
 
+        //for testing purposes remove when functional
+            var testCompany = $("#companyName").val();
+            $("#businessType").val("software");
+            $("#companyWebsite").val("www.company.com");
+            $("#companyPhone").val(2332989832);
+            $("#contactPerson").val("Can");
+            $("#contactPersonLastname").val("Ali");
+            $("#emailAddress").val(testCompany+"@gmail.com");
+            $("#contactPersonPhone").val();
+            $("#contactPersonExtension").val();
+            $("#companyDescription").val();
+            $("#techologiesUsed").val();
+            $("#password1").val();
+            $("#password2").val();
+
+
         //get company information on submit 
         $("#companySubmit").on("click", function (event) {
             event.preventDefault();

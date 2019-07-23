@@ -6,13 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sign Up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
+
 <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/coderSignUp/:coderName">Coder Signup<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/company/companyList">Company List<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Thanks for Signing Up</h1>
@@ -21,23 +41,26 @@
     </div>
     <div class="form-row">
         <style>
-            .form-control{
+            .form-control {
                 margin: 0px 50px 2px 2px;
-                width: 500px;         
+                width: 500px;
             }
-            #companySubmit{
-                margin-top: 15px; 
-                color: blanchedalmond; 
+
+            #companySubmit {
+                margin-top: 15px;
+                color: blanchedalmond;
                 background-color: darkgoldenrod
             }
-            #links{
-                margin: 20px 350px ; 
+
+            #links {
+                margin: 20px 350px;
 
             }
-            #textAreas{
-                margin: 20px 350px ; 
+
+            #textAreas {
+                margin: 20px 350px;
             }
-            </style>
+        </style>
         <div class="col">
             <input type="text" class="form-control" id="userRName" placeholder="Name">
             <input type="text" class="form-control" id="userlastname" placeholder="Lastname">
@@ -46,7 +69,8 @@
         <div class="col">
             <input type="text" class="form-control" id="userEmailAddress" placeholder="Email Address">
             <input type="text" class="form-control" id="portfolio" placeholder="Portfolio">
-            <input type="text" class="form-control" id="userPhone" placeholder="Phone # (You Phone # will not be displayed) ">
+            <input type="text" class="form-control" id="userPhone"
+                placeholder="Phone # (You Phone # will not be displayed) ">
         </div>
 
         <div class="form-row" id="links">
@@ -57,11 +81,13 @@
         </div>
         <div class="form-row" id="textAreas">
             <div class="col">
-                <textarea type="text" class="form-control textarea" id="userDescription" placeholder="Describe Yourself (etc, Who you are? How long have you been coding ?)"></textarea>
-                <textarea type="text" class="form-control textarea" id="userTechologiesUsed" placeholder="List Your Skills in Coding (etc, Javascript, Node.js, MySql, HTML, CSS)"></textarea>
+                <textarea type="text" class="form-control textarea" id="userDescription"
+                    placeholder="Describe Yourself (etc, Who you are? How long have you been coding ?)"></textarea>
+                <textarea type="text" class="form-control textarea" id="userTechologiesUsed"
+                    placeholder="List Your Skills in Coding (etc, Javascript, Node.js, MySql, HTML, CSS)"></textarea>
             </div>
         </div>
-        <div class = "skillsComboBox">
+        <div class="skillsComboBox">
 
 
         </div>
@@ -88,6 +114,23 @@
     <script>
         console.log("connected userSignup page");
 
+        //for testing purposes, remove when functional
+        $("#userRName").val(" "); 
+        $("#userlastname").val("tchaikovsky"); 
+        $("#username").val("TchaikoInDark"); 
+        $("#userEmailAddress").val("TchaikoInDark@gmail.com"); 
+        $("#portfolio").val("tchaiko.com"); 
+        $("#userPhone").val(0322445323); 
+        $("#linkedin").val("www.linkedin.com/tchaikovski"); 
+        $("#github").val("www.github.com"); 
+        $("#userDescription").val("Best at what he had done"); 
+        $("#userTechologiesUsed").val("Clasical music"); 
+        $("#userPassword1").val("1234567");
+        $("#userPassword2").val("1234567");
+
+
+
+
         //get company information on submit 
         $("#userSubmit").on("click", function (event) {
             event.preventDefault();
@@ -103,6 +146,15 @@
             var userTechologiesUsed = $("#userTechologiesUsed").val();
             var userPassword1 = $("#userPassword1").val().trim();
             var userPassword2 = $("#userPassword2").val().trim();
+
+            function passwordConfirmation(userPassword1, userPassword2) {
+                if (userPassword1 !== userPassword2) {
+                    alert("Please check your password and enter matching password combination")
+                    return False
+                }
+            }
+
+            passwordConfirmation(userPassword1, userPassword2);
 
             var userInfo = {
                 userRName: userRName,
@@ -134,8 +186,8 @@
         });
 
         var skillList = ["HTML", "CSS", "JavaScript", "Node.js", "Express", "mySql", "MongoDB", "React", "JSX"];
-        var  input = $("<input type = 'checkbox'/>" ); 
-        
+        var input = $("<input type = 'checkbox'/>");
+
 
         //clear inputboxes
         function clearInputBoxes() {
