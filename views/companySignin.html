@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Coder Sign In</title>
+    <title>Company Signin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -17,7 +17,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/coderList">Home</a>
+        <a class="navbar-brand" href="/">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@
     <div>
         <input type="text" id="companyUsername" class="username" placeholder="Username" />
         <input type="password" id="companyPassword" class="password" placeholder="Password" />
-        <button type="submit" id="companyLogin" class="SingInButton">Sign In</button>
+        <button type="submit" id="companySignin" class="SingInButton">Signin</button>
     </div>
 
 <!-- the script is built in to html for now but it has to be seperated -->
@@ -41,7 +41,7 @@
         console.log("script connected");
         //get username and password
 
-        $("#companyLogin").on("click", function () {
+        $("#companySignin").on("click", function () {
             var username = $("#companyUsername").val();
             var password = $("#companyPassword").val();
 

@@ -11,13 +11,17 @@ router.get("/", function(req, res){
     res.sendFile(path.join(__dirname,("../views/main.html"))); 
 }); 
 
-router.get("/companyLogin", function(req, res){
-    res.sendFile(path.join(__dirname, ("../views/companyLogin.html"))); 
+router.get("/companySignin", function(req, res){
+    res.sendFile(path.join(__dirname, ("../views/companySignin.html"))); 
 })
 
-router.get("/companySignUp", function(req, res){
+router.get("/companySignup", function(req, res){
     res.sendFile(path.join(__dirname,("../views/companySignUp.html"))); 
 
+})
+
+router.get("/companyList", function(req, res){
+    res.render("companiesList", {})
 })
 
 var link = "https://images.unsplash.com/photo-1543145223-1f9043516739?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80";

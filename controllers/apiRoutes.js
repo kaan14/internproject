@@ -31,7 +31,7 @@ function emailSend(data) {
 
 //database import 
 var db_company = require('../models/crudCompany'); 
-var db_user = require("../models/crudCoder"); 
+var db_coder = require("../models/crudCoder"); 
 
 
 //company info to database and send an e-mail to user
@@ -47,7 +47,7 @@ router.post("/api/companyInfo", function (req, res) {
 
 
 router.post("/api/userInfo", function(req, res){
-       db_user.create(req.body.userRName, req.body.userlastname, req.body.userEmailAddress,req.body.portfolio, req.body.userPhone, req.body.github, req.body.linkedin, req.body.github, req.body.userDescription, req.body.userTechologiesUsed, req.body.userPassword1); 
+    db_coder.create(req.body.userRName, req.body.userlastname, req.body.userEmailAddress,req.body.portfolio, req.body.userPhone, req.body.github, req.body.linkedin, req.body.github, req.body.userDescription, req.body.userTechologiesUsed, req.body.userPassword1); 
        console.log(req.body.userRName, req.body.userlastname, req.body.userEmailAddress,req.body.portfolio, req.body.userPhone, req.body.github, req.body.linkedin, req.body.github, req.body.userDescription, req.body.userTechologiesUsed, req.body.userPassword1); 
 
     console.log("users info is succesfully created")

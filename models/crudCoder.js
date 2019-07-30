@@ -25,8 +25,10 @@ var CRUD = {
             // console.log(snapshot.val()); 
             return(snapshot.val());
         })
-    }
+        
+    },
 }
+
 
 module.exports = CRUD;
 

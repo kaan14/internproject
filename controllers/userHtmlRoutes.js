@@ -6,8 +6,8 @@ var router = express.Router();
 var path = require('path');
 
 
-router.get("/coderSignUp", function (req, res) {
-    res.sendFile(path.join(__dirname, ("../views/userSignUp.html")));
+router.get("/coderSignup", function (req, res) {
+    res.sendFile(path.join(__dirname, ("../views/coderSignup.html")));
 });
 
 router.get("/jobFeed", function (req, res) {
@@ -15,13 +15,12 @@ router.get("/jobFeed", function (req, res) {
 });
 
 router.get("/coderList", function(req, res){
-    log = db_coder.findAll()
-    console.log("log is here" + log)
-    // res.render('coderList',{coderList: coderList })
+    logdb = db_coder.findAll()
+    console.log(logdb)
 }); 
 
-router.get("/coderSignIn", function(req,res){
-    res.sendFile(path.join(__dirname, ("../views/coderSignIn.html"))); 
+router.get("/coderSignin", function(req,res){
+    res.sendFile(path.join(__dirname, ("../views/coderSignin.html"))); 
 }); 
 
 router.get("/coder/:coderName", function (req, res) {
