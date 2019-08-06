@@ -24,7 +24,8 @@ router.get("/coderSignin", function(req,res){
 }); 
 
 router.get("/coder/:coderName", function (req, res) {
-    res.render('userProfile', {
+    console.log(req.params)
+    res.render('coderProfile', {
         userImage: link,
         name: "kaan",
         lastname: "kisacik",
