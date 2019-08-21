@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Company Signin</title>
@@ -12,9 +11,7 @@
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">Home</a>
@@ -36,21 +33,17 @@
         <button type="submit" id="companySignin" class="SingInButton">Signin</button>
     </div>
 
-<!-- the script is built in to html for now but it has to be seperated -->
+    <!-- the script is built in to html for now but it has to be seperated -->
     <script>
         console.log("script connected");
         //get username and password
 
-        $("#companySignin").on("click", function () {
+        $("#companySignin").on("click", function() {
             var username = $("#companyUsername").val();
             var password = $("#companyPassword").val();
-
             console.log(username + " " + password);
-
-
         });
 
     </script>
 </body>
-
 </html>
