@@ -22,3 +22,14 @@
   </div>
 </div>
 
+{{#each company}}
+<div>
+    <h4 id="companyName">{{this.name}}</h4>
+    <p id="companyDescription">{{this.description}}</p>
+    {{#each this.tech}}
+    <li id="companyTech">{{this}}</li>
+    {{/each}}
+</div>  
+{{/each}}
+ 
+

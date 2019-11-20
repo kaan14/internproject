@@ -1,7 +1,7 @@
 var firebase = require('./index');
 
 var CRUD = {
-    create: function(userRName, userlastname, userEmailAddress, portfolio, userPhone, github, linkedin, github, userDescription, userTechologiesUsed, userPassword1) {
+    create: function (userRName, userlastname, userEmailAddress, portfolio, userPhone, github, linkedin, github, userDescription, userTechologiesUsed, userPassword1) {
         firebase.ref(`users/${userRName}`).set({
             userInfo: {
                 firstName: userRName,
@@ -10,8 +10,8 @@ var CRUD = {
                 phone: userPhone,
                 userDescription: userDescription,
                 portfolio: portfolio, //should be an array of links for websites, github, linkedin
-                linkedin: linkedin, 
-                github: github, 
+                linkedin: linkedin,
+                github: github,
                 userTechologiesUsed: userTechologiesUsed,
                 userPassword: userPassword1
 
@@ -20,13 +20,16 @@ var CRUD = {
         });
 
     },
-    findAll: function(){
-        firebase.ref('users').once("value", function(snapshot){
-            // console.log(snapshot.val()); 
-            return(snapshot.val());
+    findAll: function () {
+        firebase.ref('users').once("value").
+        then (function (snapshot) {
+            var object = JSON.stringify(snapshot.val())
+            console.log("this is from CRUD findALL" + object);
+            return object;
         })
-        
+
     },
+
 }
 
 

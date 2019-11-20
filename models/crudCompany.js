@@ -15,7 +15,15 @@ var CRUD = {
                 // lastName: contactPersonLastname,
                 // email: contactPersonEmail 
         });
-    } 
+    }, 
+    findAll: function(){
+        firebase.ref('companies').once('value').
+        then (function(snapshot){
+            var object = JSON.stringify(snapshot.val().kaan.companyPhone)
+            console.log("CrudCompany" + object)
+            return object
+        }); 
+    }
 }; 
 
 module.exports = CRUD;

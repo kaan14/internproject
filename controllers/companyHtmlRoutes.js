@@ -1,5 +1,5 @@
 var express = require('express'); 
-var db = require('../models/crudCompany')
+var dbCompany = require('../models/crudCompany')
 var router = express.Router(); 
 var path = require('path'); 
 
@@ -21,7 +21,14 @@ router.get("/companySignup", function(req, res){
 })
 
 router.get("/companyList", function(req, res){
-    res.render("companiesList", {})
+    dbLog = dbCompany.findAll()
+    if (dbLog != undefined){
+    console.log( "htmlRoutes has recieved" + dbLog)
+    }
+    else{
+        console.log(dbLog)
+    }
+    // res.render("companiesList", {})
 })
 
 var link = "https://images.unsplash.com/photo-1543145223-1f9043516739?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80";
